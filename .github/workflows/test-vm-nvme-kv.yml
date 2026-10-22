@@ -81,6 +81,9 @@ env:
 
   VM_IMAGES_DIR: /var/lib/qemu-tool/images
   SSH_PORT: "2222"
+  # Probe: full QEMU NVMe/bridge tracing so the compose log shows ring reads,
+  # doorbell forwards, and SPDK-bound writes, not only invalid commands.
+  VM_NVME_TRACE: all
 
 jobs:
   test-vm-nvme-kv:
